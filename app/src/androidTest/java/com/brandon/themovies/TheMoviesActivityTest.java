@@ -15,6 +15,12 @@ public class TheMoviesActivityTest {
 
     @Test
     public void launchApp_launchesActivity() {
-        eyes.seesToolbar();
+        eyes.seesToolbar()
+                .seesToolbarTitle();
+    }
+
+    @Test
+    public void hasNoMovies() {
+        eyes.seesEmptyMovies();
     }
 }

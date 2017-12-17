@@ -18,5 +18,17 @@ public interface TheMoviesRobot {
                    .check(matches(isDisplayed()));
             return this;
         }
+
+        public Eyes seesToolbarTitle() {
+            onView(withId(R.id.movies_toolbar))
+                    .check(matches(isDisplayed()));
+            return this;
+        }
+
+        public Eyes seesEmptyMovies() {
+            onView(withId(R.id.movies_list))
+                .check(matches(isDisplayed()));
+            return this;
+        }
     }
 }

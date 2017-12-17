@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="moviesViewModel"
+            type="com.brandon.themovies.MoviesRecyclerViewModel" />
     </data>
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
         <android.support.v7.widget.Toolbar
+            android:id="@+id/movies_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/movies_toolbar">
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/app_name"
+            app:titleTextColor="@android:color/white" />
 
-        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/movies_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:adapter="@{moviesViewModel.moviesAdapter}"
+            app:layoutManager="@{moviesViewModel.layoutManager}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movies_toolbar" />
 
     </android.support.constraint.ConstraintLayout>
 
