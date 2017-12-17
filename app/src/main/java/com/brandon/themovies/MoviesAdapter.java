@@ -29,5 +29,5 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> {
     public int getItemCount() {
         return movies.size();
     }
-    
+
 }
